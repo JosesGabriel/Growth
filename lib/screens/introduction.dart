@@ -54,18 +54,63 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
+    TextTheme textTheme = Theme.of(context).textTheme;
+
     final ThemeData theme = Theme.of(context);
-    final MediaQueryData mediaQuery = MediaQuery.of(context);
 
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
+        backgroundColor: Color(0xFFF7E6D1),
         body: SafeArea(
-          child: Center(
-            child: Text(
-              'Test',
-              style: theme.textTheme.headline4,
-            ),
+          child: Column(
+            children: [
+              Image.asset(
+                'assets/images/joses.png',
+              ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 18.0,
+                    horizontal: 24,
+                  ),
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Text(
+                          'Hello, I am Joses, and welcome to GrowthPH.',
+                          style: textTheme.headline4.copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Padding(padding: EdgeInsets.all(14)),
+                        Text(
+                          'Just like you, we are young-adults trying to navigate this confusing runway we call life.',
+                          style: textTheme.headline4.copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: width * 0.6,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Next',
+                    style: textTheme.headline4,
+                  ),
+                ),
+              )
+            ],
           ),
         ),
       ),
