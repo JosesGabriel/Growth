@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:growthph/screens/introduction.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -7,6 +9,25 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) {
+        Future<void>.delayed(const Duration(milliseconds: 1500), () {
+          Navigator.push(
+            context,
+            PageTransition<dynamic>(
+              type: PageTransitionType.fade,
+              child: const IntroductionScreen(),
+              duration: const Duration(milliseconds: 600),
+            ),
+          );
+        });
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -24,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen>
                 opacity: AnimationController(
                   duration: const Duration(seconds: 2),
                   vsync: this,
-                )..repeat(reverse: true),
+                )..repeat(),
                 child: Image.asset(
                   'assets/images/pottedplant.png',
                   width: width * 0.4,
