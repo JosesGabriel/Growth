@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:growthph/screens/splash.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -12,6 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        textTheme: GoogleFonts.poiretOneTextTheme(
+          Theme.of(context).textTheme,
+        ),
       ),
       home: MyHomePage(title: 'GrowthPH'),
       debugShowCheckedModeBanner: false,
