@@ -11,6 +11,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+    TextTheme textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Color(0xFF0CA498),
@@ -19,19 +20,25 @@ class _SplashScreenState extends State<SplashScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ScaleTransition(
-                scale: AnimationController(
-                  duration: const Duration(seconds: 1),
-                  lowerBound: 0.7,
-                  upperBound: 1,
+              FadeTransition(
+                opacity: AnimationController(
+                  duration: const Duration(seconds: 2),
                   vsync: this,
                 )..repeat(reverse: true),
-                child: CircleAvatar(
-                  radius: width * 0.2,
-                  foregroundImage: AssetImage('assets/images/growth.png'),
+                child: Image.asset(
+                  'assets/images/pottedplant.png',
+                  width: width * 0.4,
                 ),
               ),
-              Text('Growth')
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'GrowthPH',
+                  style: textTheme.headline4.copyWith(
+                    color: Colors.white,
+                  ),
+                ),
+              )
             ],
           ),
         ),
