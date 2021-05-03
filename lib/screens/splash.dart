@@ -43,9 +43,10 @@ class _SplashScreenState extends State<SplashScreen>
             children: [
               FadeTransition(
                 opacity: AnimationController(
-                  duration: const Duration(seconds: 2),
+                  duration: const Duration(seconds: 1),
+                  value: 1,
                   vsync: this,
-                )..repeat(),
+                ),
                 child: Image.asset(
                   'assets/images/pottedplant.png',
                   width: width * 0.4,
