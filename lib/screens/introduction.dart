@@ -98,10 +98,14 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                       Spacer(),
                       Container(
                         decoration: const ShapeDecoration(
-                          color: Colors.lightBlue,
+                          color: Color(0xFFe4c6aa),
                           shape: CircleBorder(),
                         ),
+                        margin: EdgeInsets.only(bottom: 20),
+                        height: 70,
+                        width: 70,
                         child: IconButton(
+                          splashRadius: 45,
                           color: Colors.white,
                           icon: Icon(Icons.arrow_forward_ios),
                           onPressed: () {},
