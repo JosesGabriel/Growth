@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:growthph/screens/splash.dart';
+import 'package:growthph/configs/themes.dart';
 
-import 'package:google_fonts/google_fonts.dart';
+import 'package:growthph/screens/splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,12 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        textTheme: GoogleFonts.poiretOneTextTheme(
-          Theme.of(context).textTheme,
-        ),
-      ),
+      theme: customTheme,
       home: MyHomePage(title: 'GrowthPH'),
       debugShowCheckedModeBanner: false,
     );
