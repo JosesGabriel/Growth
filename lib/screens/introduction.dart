@@ -71,42 +71,43 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
               Image.asset(
                 'assets/images/joses.png',
               ),
-              Center(
+              Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 18.0,
-                    horizontal: 24,
-                  ),
-                  child: Container(
-                    child: Column(
-                      children: [
-                        Text(
-                          'Hello, I am Joses, and welcome to GrowthPH.',
-                          style: textTheme.headline4.copyWith(
-                            fontWeight: FontWeight.w700,
+                  padding: EdgeInsets.symmetric(horizontal: 50),
+                  child: Column(
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            'Hello, I am Joses, and welcome to GrowthPH.',
+                            style: textTheme.headline4.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
-                        ),
-                        Padding(padding: EdgeInsets.all(14)),
-                        Text(
-                          'Just like you, we are young-adults trying to navigate this confusing runway we call life.',
-                          style: textTheme.headline4.copyWith(
-                            fontWeight: FontWeight.w700,
+                          Padding(padding: EdgeInsets.all(14)),
+                          Text(
+                            'Just like you, we are young-adults trying to navigate this confusing runway we call life.',
+                            style: textTheme.headline4.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
+                        ],
+                      ),
+                      Spacer(),
+                      Container(
+                        decoration: const ShapeDecoration(
+                          color: Colors.lightBlue,
+                          shape: CircleBorder(),
                         ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: width * 0.6,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Next',
-                    style: textTheme.headline4,
+                        child: IconButton(
+                          color: Colors.white,
+                          icon: Icon(Icons.arrow_forward_ios),
+                          onPressed: () {},
+                        ),
+                      )
+                    ],
                   ),
                 ),
               )
